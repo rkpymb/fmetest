@@ -66,7 +66,7 @@ const HomeFeed = () => {
 
         <>
             {isLoading &&
-                <div >
+                <div>
                     <Skeleton variant="rectangular" height={150} />
                 </div>
             }
@@ -88,7 +88,7 @@ const HomeFeed = () => {
                     <div className={styles.FeelListH}>
                         {Retdata.map((item) => {
                             return <div key={item.id} className={styles.FeelListH_ITEM}>
-                                <Link href={`/category/${item.Catid}`} style={{ textDecoration: 'none' }}>
+                                <Link href={`/Profile/${item.username}`} style={{ textDecoration: 'none' }}>
                                     <div
                                         style={{
                                             position: "relative",

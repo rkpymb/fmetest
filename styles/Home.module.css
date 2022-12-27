@@ -8,6 +8,7 @@
     z-index: 999;
 }
 
+
 .NavbarBox {
     margin: auto;
     width: 70%;
@@ -149,7 +150,7 @@
 .FeelListH_ITEM {
     margin: 5px;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
-   
+
     border-radius: 5px;
 }
 
@@ -212,20 +213,198 @@
 
 .Devider {
     height: 5px;
-    background-color: rgb(244, 238, 238);
+    background-color: rgb(212, 238, 255);
     margin-top: 10px;
     margin-bottom: 10px
 }
 
+.VendorDataBox {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.VendorDataBoxA {
+    width: 70%;
+}
+
+.VendorDataBoxA_Points {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+.VendorDataBoxB {
+    width: 100%;
+    margin-left: 25px;
+}
+
+.VendorDataBoxA_VendorDp {
+    border-radius: 20px;
+    background-color: '#c5d6e3';
+    width: "100%";
+    height: "300px";
+    overflow: hidden;
+}
+
+.VendorDataBoxA_TitleBox {
+    color: #3c4852;
+}
+
+.VendorDataBoxA_TitleBox h1 {
+    margin: 0;
+}
+
+.V_counterBox {
+    display: flex;
+
+}
+
+.V_counterITEM {
+
+    min-height: 120px;
+    width: 25%;
+    border-radius: 5px;
+
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.V_counterITEMNumber {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/* .LoaderPhotos{
+    display: flex;
+    flex-wrap: wrap;
+}
+.LoaderPhotosItem{
+    margin: 10px;
+} */
+.LoaderSkelton {
+    height: 300px;
+}
+
+
+.GridBox {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.GridBox_ITEM {
+    background-color: rgb(198, 206, 214);
+    color: white;
+    height: 300px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+
+}
+
+.GridBox_ITEM_review {
+    background-color: rgb(236, 239, 242);
+    color: rgb(43, 42, 42);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+    padding: 10px;
+    display: flex;
+}
+
+.GridBox_ITEM_Booking {
+    background-color: #ffffff;
+    color: rgb(43, 42, 42);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+
+
+    padding: 10px;
+
+}
+
+.GridBox_ITEM_BookingBFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.GridBox_ITEM_BookingBSaveTag {
+    padding: 5px;
+    background-color: #1ab64f;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dotted rgb(255, 255, 255);
+}
+
+.GridBox_ITEM_BookingBSaveTag span {
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.GridBox_reviewItemIMG {
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.GridBox_reviewItemB {
+    margin-left: 10px;
+}
+
+.ReviewText {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: rgb(46, 42, 42);
+}
+
+.PlanDatabox {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.PlanDataboxA {
+    width: 50%;
+
+}
+
+.PlanDataboxB {
+    width: 50%;
+}
+
+.PlanDataboxATITLE h1 {
+    margin: 0;
+}
+ .BookingBTN {
+     width: 100%;
+ }
+.DoneBOXDATA{
+    text-align: center;
+    padding: 10px;
+}
 /* Desktop Css */
-@media  screen and (min-width: 800px) {
+@media screen and (min-width: 800px) {
     .FeelListH {
         flex-wrap: wrap;
     }
-        .FeelListH_ITEM {
-            min-width: 200px;
 
-        }
+    .FeelListH_ITEM {
+        min-width: 200px;
+
+    }
 }
 
 /* MOBILE CSS */
@@ -270,9 +449,45 @@
     .LoginHeroBoxA {
         min-width: 100%;
     }
-         .FeelListH_ITEM {
-    
-             min-width: 250px;
-    
-         }
+
+    .FeelListH_ITEM {
+
+        min-width: 250px;
+
+    }
+
+    .VendorDataBox {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .VendorDataBoxA {
+        width: 100%;
+    }
+
+    .VendorDataBoxB {
+        width: 100%;
+        margin: 0;
+    }
+
+    .V_counterBox {
+        overflow: auto;
+    }
+
+    .V_counterITEM {
+        min-width: 200px;
+    }
+
+    .PlanDatabox {
+        flex-wrap: wrap;
+    }
+
+    .PlanDataboxA {
+        min-width: 100%;
+    }
+
+    .PlanDataboxB {
+        min-width: 100%;
+    }
+   
 }
