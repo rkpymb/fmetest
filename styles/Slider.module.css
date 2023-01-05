@@ -1,0 +1,42 @@
+.full_img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: white;
+    right: 10px;
+    padding: 30px;
+    color: #000 !important;
+    fill: black !important;
+    stroke: black !important;
+}
+
+.BannerCatCard {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.cat_img {
+    cursor: pointer;
+    width: 80%;
+}
+
+.ProductSliderBox {
+    width: 210px;
+    height: 250px;
+    padding: 10px;
+    border: 0.5px solid rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px;
+
+    align-items: center;
+
+}

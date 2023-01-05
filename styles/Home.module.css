@@ -1,17 +1,50 @@
+.ContainerSliderTop {
+    padding-left: 10px;
+}
+
+.LotteSizefull {
+
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full_img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.BannerSliderCard {
+    width: 80%;
+    margin: 10px;
+}
+
+.Aboutbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100vh;
+}
+
 .Navbar {
     width: 100%;
     position: sticky;
     top: 0;
     overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+    /* background-color: #333545; */
+    background-color: #14062b;
+
     z-index: 999;
 }
 
 
+
 .NavbarBox {
     margin: auto;
-    width: 70%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,7 +77,7 @@
     margin: 2px 15px 0px 15px;
     border-radius: 5px;
     padding: 4px 15px 0px 15px;
-    background-color: #2c2b2a;
+    background-color: #f84464;
 }
 
 .NavBTN_ICON {
@@ -112,11 +145,19 @@
 
 .Container {
     margin: auto;
-    width: 70%;
+    width: 80%;
     color: #3c4852;
     overflow: hidden;
 
 
+}
+
+.ContainerDesktopShowbg {
+    background-color: #eceff3;
+}
+
+.ContainerDesktopShowbg_Contact {
+    background-color: #404043;
 }
 
 .CatBox {
@@ -144,7 +185,13 @@
 
 .FeelListH {
     display: flex;
+    overflow: hidden;
 
+}
+
+
+.Sliderlist_Item {
+    min-height: 200px;
 }
 
 .FeelListH_ITEM {
@@ -155,17 +202,26 @@
 }
 
 .FeelListHData {
-    padding: 10px;
+    padding: 5px;
     color: black;
 }
 
 .FeelListHDataFlex {
     display: flex;
     align-items: center;
+    min-height: 30px;
+
+}
+
+.FeelListHDataFlexTitle {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
 .FeelListHDataFlexItem {
-    margin: 10px 10px 10px 0px;
+    margin: 5px 10px 0px 0px;
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -212,10 +268,10 @@
 }
 
 .Devider {
-    height: 5px;
-    background-color: rgb(212, 238, 255);
+    height: 2px;
+    background-color: rgb(245, 242, 242);
     margin-top: 10px;
-    margin-bottom: 10px
+    margin-bottom: 5px
 }
 
 .VendorDataBox {
@@ -292,6 +348,21 @@
     height: 300px;
 }
 
+.LoaderSkeltonBookinglist {
+    height: 150px;
+}
+
+.Slider_LoaderBoxItem {
+    width: 100%;
+    margin: 10px;
+}
+
+.Slider_LoaderBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 .GridBox {
     max-width: 1200px;
@@ -388,28 +459,145 @@
 .PlanDataboxATITLE h1 {
     margin: 0;
 }
- .BookingBTN {
-     width: 100%;
- }
-.DoneBOXDATA{
+
+.BookingBTN {
+    width: 100%;
+}
+
+.DoneBOXDATA {
     text-align: center;
     padding: 10px;
 }
-/* Desktop Css */
-@media screen and (min-width: 800px) {
-    .FeelListH {
-        flex-wrap: wrap;
-    }
 
-    .FeelListH_ITEM {
-        min-width: 200px;
-
-    }
+.MYPROFILE_A {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
+
+.MYProfileTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.GridBox_ITEM_MyBookingsItem {
+    background-color: rgb(255, 255, 255);
+    color: rgb(43, 42, 42);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.GridBox_ITEM_MyBookingsItemB {
+    margin-top: 10px;
+    border-top: 1px dashed rgb(200, 194, 194);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.Cat_LoaderBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.Cat_LoaderBoxItem {
+    margin: 5px;
+    min-width: 150px;
+    min-height: 100px;
+}
+
+.Feed_LoaderBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.Feed_LoaderBoxItem {
+    margin: 5px;
+    min-width: 250px;
+    min-height: 200px;
+}
+
+.ContactPageBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: black
+}
+
+.ContactPageBoxItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.ContactHomeBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.ContactHomeItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContactIcon {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Footer {
+
+    background-color: #333338;
+
+    padding: 10px;
+    color: white;
+}
+
+.FooterMenuBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.FooterMenuBoxItem {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.FooterMenuBoxItem :hover {
+    color: yellow;
+}
+
+/* Desktop Css */
+
 
 /* MOBILE CSS */
 
-@media only screen and (max-width: 799px) {
+@media only screen and (max-width: 900px) {
 
     .Container {
         margin: auto;
@@ -489,5 +677,48 @@
     .PlanDataboxB {
         min-width: 100%;
     }
-   
+
+    .FeelListHDataFlexTitle {
+        min-height: 40px;
+    }
+
+    .ContactHomeBox {
+        flex-wrap: wrap;
+    }
+
+    .ContactHomeItem {
+        min-width: 100%;
+        margin-top: 10px;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .ContactText {
+        margin: 10px
+    }
+
+    .ContactIcon {
+        margin: 5px
+    }
+
+    .FooterMenuBoxItem {
+        width: 100%;
+    }
+
+    .Aboutbox {
+        flex-wrap: wrap;
+
+    }
+
+    .sidebysideA img {
+        width: 100%;
+    }
+
+    .ContactPageBox {
+        flex-direction: column;
+    }
+    .ContactPageBoxItem {
+        flex-direction: column;
+    }
+
 }

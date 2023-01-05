@@ -14,7 +14,7 @@ const CheckloginStates = (props) => {
                 const usermobile = localStorage.getItem('userid');
                 const sendUser = { usermobile }
 
-                const data = fetch("/api/CheckProfile", {
+                const data = fetch("/api/UserProfileData", {
                     method: "POST",
                     headers: {
                         'Content-type': 'application/json'

@@ -5,6 +5,101 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-Link{
-  text-decoration: none;
+
+.h5 {
+  min-height: 5px;
+}
+
+.h10 {
+  min-height: 10px;
+}
+
+.h20 {
+  min-height: 20px;
+}
+
+.h60 {
+  min-height: 60px;
+}
+
+.h100 {
+  min-height: 100px;
+}
+
+.h150 {
+  min-height: 150px;
+}
+
+
+.swiper-button-next::after {
+  display: none;
+}
+
+
+.swiper-button-prev::after {
+  display: none;
+
+}
+
+.displaynone {
+  color: white !important;
+
+}
+
+/* swipper js */
+.swiper-container {
+  width: 550px;
+  margin: 0px 0px 0px 2px;
+
+
+}
+
+
+/* swipper js Home feed list*/
+.swiper-container_FeedSlider {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+  border-radius: 5px;
+  padding: 10px;
+
+  margin: 10px;
+}
+
+
+@media screen and (min-width: 901px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    background-color: white;
+    border-radius: 2px;
+    padding: 2px;
+
+  }
+
+
+  .swiper-button-next {
+    background-image: url(/angle-right.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+  }
+
+  .swiper-button-prev {
+    background-image: url(/angle-left.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+
+  }
 }

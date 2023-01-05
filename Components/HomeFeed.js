@@ -20,7 +20,7 @@ const HomeFeed = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        const handleSubmit = async () => {
+        const SearchVendor = async () => {
             try {
                 if (localStorage.getItem('Pincode')) {
                     const PincodeNow = localStorage.getItem('Pincode');
@@ -30,7 +30,7 @@ const HomeFeed = () => {
                     setCurrentState(StateNow)
                     setCurrentCity(CityNow)
 
-                    const sendUM = { pincode: PincodeNow }
+                    const sendUM = { pincode: PincodeNow, city: CityNow }
                     const data = await fetch("/api/HomeFeed", {
                         method: "POST",
                         headers: {
@@ -56,7 +56,7 @@ const HomeFeed = () => {
             }
             
         }
-        handleSubmit()
+        SearchVendor()
 
 
     }, [router.query])

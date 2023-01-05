@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { SlLockOpen, SlEmotsmile } from "react-icons/sl";
 import CheckloginContext from '../context/auth/CheckloginContext'
 import { BASE_URL, AppName } from '../Data/config'
-const Navbar = () => {
+
+const Navbar = ({ BackDropOpen, BackDropClose }) => {
     const Contextdata = useContext(CheckloginContext)
 
   return (
@@ -14,10 +15,10 @@ const Navbar = () => {
               <div className={styles.NavbarBoxLeft}>
                   <div className={styles.logo}>
                       <Link href='/'>
-                          <img src='/appiconmain.png' alt='logo'  className={styles.Navlogo} />
+                          <img src='/mainlogo.png' alt='logo'  className={styles.Navlogo} />
                       </Link>
                   </div>
-                  
+                 
               </div>
               <div className={styles.NavbarBoxRight}>
                   <div className={styles.NavbarBoxRightBTNBOX}>
@@ -34,7 +35,7 @@ const Navbar = () => {
                           </Link>
                       }
                       {Contextdata.IsLogin &&
-                          <Link href='/Profile' style={{ textDecoration: 'none' }}>
+                          <Link href='/Account' style={{ textDecoration: 'none' }}>
                               <div className={styles.UserProfileTop}>
                                   <div>
                                       <Image
@@ -48,7 +49,7 @@ const Navbar = () => {
                               </div>
                           </Link>
                       }
-                     
+                      
                      
                  </div>
               </div>

@@ -51,7 +51,7 @@ export default function Home({ BackDropOpen, BackDropClose }) {
     }
     const handleChangeGender = (event) => {
         setValueGender(event.target.value);
-        console.log(event.target.value)
+        // console.log(event.target.value)
     };
 
     // On submit mobile

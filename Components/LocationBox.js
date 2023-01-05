@@ -11,10 +11,16 @@ import TextField from '@mui/material/TextField';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import { useRouter } from 'next/router'
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 const LocationBox = ({ BackDropOpen, BackDropClose }) => {
     const router = useRouter()
     const [OpenDrawer, setOpenDrawer] = useState(false);
     const [Pincode, setPincode] = useState('');
+    const [CityName, setCityName] = useState('');
     const [isalert, setIsalert] = useState(false);
     const [AlertText, setAlertText] = useState('');
     const [CurrentPincode, setCurrentPincode] = useState('');
@@ -26,6 +32,12 @@ const LocationBox = ({ BackDropOpen, BackDropClose }) => {
         setAlertText('')
         const PincodeXX = document.querySelector('#Pincode').value
         setPincode(PincodeXX)
+    }
+    const handleCityName = () => {
+        setIsalert(false);
+        setAlertText('')
+        const CityNamex = document.querySelector('#CityName').value
+        setCityName(CityNamex)
     }
 
     const OpenDR = () => {
@@ -60,7 +72,7 @@ const LocationBox = ({ BackDropOpen, BackDropClose }) => {
             })
                 .then((parsedPincode) => {
                    
-                    console.log(parsedPincode)
+                    // console.log(parsedPincode)
                     if (parsedPincode == 'no') {
                         BackDropClose()
                         setIsalert(true);
@@ -84,6 +96,50 @@ const LocationBox = ({ BackDropOpen, BackDropClose }) => {
 
 
     }
+    const CheckCity = async () => {
+        if (CityName !== '') {
+            BackDropOpen()
+            const sendUM = { CityName }
+            const data = await fetch("/api/CheckCity", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(sendUM)
+            }).then((a) => {
+                return a.json();
+            })
+                .then((parsedCityName) => {
+                    // console.log(parsedCityName)
+                    if (parsedCityName == 'no') {
+                        BackDropClose()
+                        setIsalert(true);
+                        setAlertText('Invalid Pincode')
+                    } else {
+                        localStorage.setItem('City', parsedCityName.city);
+                        localStorage.setItem('State', parsedCityName.state);
+                        localStorage.setItem('Pincode', parsedCityName.PINCode);
+                        setTimeout(function () {
+                            CloseDR()
+                            router.push('/')
+                        }, 1000);
+                    }
+                })
+
+        } else {
+            BackDropClose()
+            setIsalert(true);
+            setAlertText('Please enter Valid City Name')
+        }
+
+
+    }
+    // Tab
+    const [value, setValue] = useState('Pincode');
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     useEffect(() => {
         // check login
@@ -96,6 +152,7 @@ const LocationBox = ({ BackDropOpen, BackDropClose }) => {
                 setPincode(PincodeNow)
                 setCurrentState(StateNow)
                 setCurrentCity(CityNow)
+                setCityName(CityNow)
                 setPincodeFound(true)
             } else {
                 OpenDR()
@@ -108,7 +165,7 @@ const LocationBox = ({ BackDropOpen, BackDropClose }) => {
     }, [router.query]);
     return (
         <div>
-            {PincodeFound && 
+            
             <div className={styles.NavLocationText} onClick={OpenDR}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <div style={{ fontSize: '20px' }}>
@@ -116,14 +173,19 @@ const LocationBox = ({ BackDropOpen, BackDropClose }) => {
                     </div>
 
                     <div style={{ marginTop: '-2px', marginLeft: '5px', fontSize: '12px' }}>
+                        {PincodeFound &&
                             <span>{CurrentCity}, {CurrentState}, {CurrentPincode}</span>
+                        }
+                        {!PincodeFound &&
+                            <span>Set Your Search Location, Click here</span>
+                        }
                     </div>
                 </div>
                 <div>
                     <span><FiChevronRight /></span>
                 </div>
             </div>
-            }
+            
             <div>
                 <SwipeableDrawer
                     anchor='bottom'
@@ -142,25 +204,60 @@ const LocationBox = ({ BackDropOpen, BackDropClose }) => {
                                         isPaused={false} />
                                 </div>
                                 <div style={{margin: '10px' }}>
-                                    <span style={{fontSize: '30px'}}>Find Arround You !</span>
-                                    <div>
-                                        <div style={{marginTop: '10px'}}>
-                                            <TextField fullWidth label="Enter Pincode" type="number" id="Pincode" autoFocus onChange={handlePincode} value={Pincode} />
-                                        </div>
-                                        {isalert && (
-                                            <Stack  style={{ marginTop: '10px' }}>
+                                    <span style={{ fontSize: '30px' }}>Find Arround You !</span>
+                                    <Box sx={{ width: '100%', typography: 'body1' }}>
+                                        <TabContext value={value}>
+                                            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                                                <TabList onChange={handleChange} aria-label="lab API tabs example">
+                                                    <Tab label="by Pincode" value="Pincode" />
+                                                    <Tab label="by City name" value="City" />
+                                                   
+                                                </TabList>
+                                            </Box>
+                                            <TabPanel value="Pincode">
+                                                <div>
+                                                    <div style={{ marginTop: '10px' }}>
+                                                        <TextField fullWidth label="Enter Pincode" type="number" id="Pincode" autoFocus onChange={handlePincode} value={Pincode} />
+                                                    </div>
+                                                    {isalert && (
+                                                        <Stack style={{ marginTop: '10px' }}>
 
-                                                <Alert severity="warning">{AlertText}</Alert>
+                                                            <Alert severity="warning">{AlertText}</Alert>
 
-                                            </Stack>
-                                        )}
-                                        <div style={{ marginTop: '10px' }}>
-                                            <Button variant="contained" endIcon={<SendIcon />} fullWidth onClick={CheckPincode}>
-                                                Set Location
-                                            </Button>
+                                                        </Stack>
+                                                    )}
+                                                    <div style={{ marginTop: '10px' }}>
+                                                        <Button variant="contained" endIcon={<SendIcon />} fullWidth onClick={CheckPincode}>
+                                                            Set Location
+                                                        </Button>
 
-                                        </div>
-                                    </div>
+                                                    </div>
+                                                </div>
+                                            </TabPanel>
+                                            <TabPanel value="City">
+                                                <div>
+                                                    <div style={{ marginTop: '10px' }}>
+                                                        <TextField fullWidth label="Enter City Name" id="CityName" autoFocus onChange={handleCityName} value={CityName} />
+                                                    </div>
+                                                    {isalert && (
+                                                        <Stack style={{ marginTop: '10px' }}>
+
+                                                            <Alert severity="warning">{AlertText}</Alert>
+
+                                                        </Stack>
+                                                    )}
+                                                    <div style={{ marginTop: '10px' }}>
+                                                        <Button variant="contained" endIcon={<SendIcon />} fullWidth onClick={CheckCity}>
+                                                            Set Location
+                                                        </Button>
+
+                                                    </div>
+                                                </div>
+                                            </TabPanel>
+                                            
+                                        </TabContext>
+                                    </Box>
+                                   
                                 </div>
                             </div>
                         </div>

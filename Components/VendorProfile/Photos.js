@@ -17,7 +17,7 @@ const Photos = ({ VendorMobile }) => {
     const [Retdata, setRetdata] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        console.log(VendorMobile)
+        // console.log(VendorMobile)
         const handleSubmit = async () => {
             const dataid = VendorMobile;
             const sendUM = { dataid }
@@ -31,7 +31,7 @@ const Photos = ({ VendorMobile }) => {
                 return a.json();
             })
                 .then((parsed) => {
-                    console.log(parsed.dataret)
+                    // console.log(parsed.dataret)
                     setRetdata(parsed.dataret)
                     setIsLoading(false)
                   

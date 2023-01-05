@@ -14,7 +14,7 @@ const CategoriesList = () => {
     const [OpenSnakbar, setOpenSnakbar] = useState(true);
 
     useEffect(() => {
-
+        setIsLoading(true)
         const handleSubmit = async () => {
             const dataid = '08c5th4rh86ht57h6g';
             const sendUM = { dataid }
@@ -42,36 +42,55 @@ const CategoriesList = () => {
 
         <>
             {isLoading &&
-                <div >
-                    <Skeleton variant="rectangular" height={150} />
+                <div className={styles.Cat_LoaderBox}>
+                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                   
+                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                   
                 </div>
             }
 
             {!isLoading &&
-                <div className={styles.CatBox}>
-                    {Retdata.map((item) => {
-                        return <div key={item.id} className={styles.CatBoxItem}>
-                            <Link href={`/category/${item.Catid}`} style={{ textDecoration: 'none' }}>
-                                <div className={styles.CatBoxItemCenter}>
-                                    <div>
-                                        <Image
-                                            src={`${BASE_URL}Storage/panel/Catimg/${item.img}`}
-                                            alt="Picture of the author"
-                                            width={50}
-                                            height={50}
-                                        />
-                                    </div>
-                                    <div style={{color:'black', fontWeight:500}}>
-                                        <span>{item.title}</span>
-
-                                    </div>
-                                </div>
-                            </Link>
+                
+                <div>
+                  
+                    <div className={styles.TitleBTNHeader}>
+                        <div className={styles.TitleBTNHeaderText}>
+                            <span style={{ fontWeight: 500 }}>Browse by category  </span>
                         </div>
-                    }
 
-                    )}
+                    </div>
+                    <div className={styles.CatBox}>
+                        {Retdata.map((item) => {
+                            return <div key={item.id} className={styles.CatBoxItem}>
+                                <Link href={`/category/${item.Catid}`} style={{ textDecoration: 'none' }}>
+                                    <div className={styles.CatBoxItemCenter}>
+                                        <div>
+                                            <Image
+                                                src={`${BASE_URL}Storage/panel/Catimg/${item.img}`}
+                                                alt="Picture of the author"
+                                                width={50}
+                                                height={50}
+                                            />
+                                        </div>
+                                        <div style={{ color: 'black', fontWeight: 500 }}>
+                                            <span>{item.title}</span>
 
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        }
+
+                        )}
+
+                    </div>
+                   
                 </div>
             }
 
