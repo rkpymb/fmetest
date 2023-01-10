@@ -5,7 +5,7 @@ const WelcomeUser = () => {
     const Contextdata = useContext(CheckloginContext)
     return (
         <div>
-            <div style={{ marginTop: '-2px', marginLeft: '5px', fontSize: '12px' }}>
+            <div style={{ marginTop: '-2px', marginLeft: '5px', fontSize: '12px',color: 'white'}}>
                 <span style={{ fontSize: '25px' }}>Hi👋 {Contextdata.Data.name}</span>
             </div>
         </div>

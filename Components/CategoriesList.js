@@ -4,7 +4,6 @@ import Image from 'next/image'
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from 'next/router'
 import { BASE_URL } from '../Data/config'
-import axios from 'axios';
 import Skeleton from '@mui/material/Skeleton';
 import Link from 'next/link';
 const CategoriesList = () => {
@@ -42,55 +41,103 @@ const CategoriesList = () => {
 
         <>
             {isLoading &&
-                <div className={styles.Cat_LoaderBox}>
-                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
-                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
-                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
-                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
-                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
-                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
+                <div className={styles.CatGrid}>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    <div className={styles.CatGridItem}>
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                    </div>
+                    
                    
-                    <Skeleton variant="rectangular" className={styles.Cat_LoaderBoxItem} />
-                   
+                    
                 </div>
             }
 
+
+
             {!isLoading &&
-                
+
                 <div>
-                  
-                    <div className={styles.TitleBTNHeader}>
-                        <div className={styles.TitleBTNHeaderText}>
-                            <span style={{ fontWeight: 500 }}>Browse by category  </span>
-                        </div>
 
-                    </div>
-                    <div className={styles.CatBox}>
+                   
+                    <div className={styles.CatGrid}>
                         {Retdata.map((item) => {
-                            return <div key={item.id} className={styles.CatBoxItem}>
-                                <Link href={`/category/${item.Catid}`} style={{ textDecoration: 'none' }}>
-                                    <div className={styles.CatBoxItemCenter}>
-                                        <div>
-                                            <Image
-                                                src={`${BASE_URL}Storage/panel/Catimg/${item.img}`}
-                                                alt="Picture of the author"
-                                                width={50}
-                                                height={50}
-                                            />
-                                        </div>
-                                        <div style={{ color: 'black', fontWeight: 500 }}>
-                                            <span>{item.title}</span>
-
-                                        </div>
+                            return <Link href={`/Categories/${item.Catid}`} className={styles.CatGridItem} style={{ textDecoration: 'none' }}>
+                                <div className={styles.CatBoxItemCenter}>
+                                    <div>
+                                        <Image
+                                            src={`${BASE_URL}Storage/panel/Catimg/${item.img}`}
+                                            alt="Picture of the author"
+                                            width={50}
+                                            height={50}
+                                        />
                                     </div>
-                                </Link>
-                            </div>
+                                    <div>
+                                        <span>{item.title}</span>
+
+                                    </div>
+                                </div>
+                            </Link>
                         }
 
                         )}
-
                     </div>
-                   
+
                 </div>
             }
 

@@ -60,7 +60,7 @@ export default function SliderTopHome() {
                                 setShowData(true)
                             } else {
                                 setShowData(false)
-                                
+
                             }
 
                         })
@@ -94,82 +94,86 @@ export default function SliderTopHome() {
             }
             {ShowData &&
                 <div>
-                    <div className={styles.Devider}></div>
-                    <div className={styles.TitleBTNHeader}>
-                        <div className={styles.TitleBTNHeaderText}>
-                            <span style={{ fontWeight: 500 }}>Available in {CurrentCity} </span>
-                        </div>
-                        <div className={styles.TitleBTNHeaderBTN}>
-                            <Button variant="outlined" size="small">
-                                view more
-                            </Button>
-                        </div>
-                    </div>
-                    <Swiper
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
-
-
-                        loop={true}
-                        loopFillGroupWithBlank={true}
-                        modules={[Navigation, Autoplay]}
-                        breakpoints={{
-                            // when window width is >= 640px
-                            640: {
-                                width: 640,
-                                slidesPerView: 2,
-
-                            },
-                            // when window width is >= 768px
-
-                            768: {
-                                width: 768,
-                                slidesPerView: 3,
-
-                            },
-                        }}
-                        navigation={true}
-                        slidesPerGroup={1}
-                        spaceBetween={5}
-                        slidesPerView={2}
-                    >
-                        {Retdata.map((item) => {
-                            return <SwiperSlide key={item.id} className='swiper-container_FeedSlider'>
-                                <div key={item.id} className={styles.Sliderlist_Item}>
-                                    <Link href={`/Profile/${item.username}`} style={{ textDecoration: 'none' }} >
-                                        <div
-                                            style={{
-                                                position: "relative",
-                                                width: "100%",
-                                                height: "150px",
-                                                backgroundColor: '#c5d6e3',
-                                            }}
-                                        >
-                                            <Image src={`${BASE_URL}Storage/panel/Vendorsdp/${item.dp}`} alt="Vercel Logo" layout="fill" />
-                                        </div>
-                                        <div className={styles.FeelListHData}>
-                                            <div className={styles.FeelListHDataFlexTitle}><span style={{ fontWeight: '500' }}>{item.name}</span></div>
-                                            <div className={styles.FeelListHDataFlex}>
-                                                <div className={styles.FeelListHDataFlexItem}>
-                                                    <div><span><SlLocationPin /></span></div>
-                                                    <div style={{ marginTop: '-3px', marginLeft: '5px' }}><span>{item.city}</span></div>
-                                                </div>
-                                                <div className={styles.FeelListHDataFlexItem}>
-                                                    <div><span><SlInfo /></span></div>
-                                                    <div style={{ marginTop: '-3px', marginLeft: '5px' }}><span>{item.mainCategory}</span></div>
-                                                </div>
-                                            </div>
-
-                                        </div>
+                    <div style={{ height: '30px' }}></div>
+                    <div className={styles.ContainerDesktopShowbg} style={{ backgroundColor: 'black' }}>
+                        <div className={styles.Container}>
+                            <div style={{ height: '20px' }}></div>
+                            <div className={styles.TitleBTNHeader}>
+                                <div className={styles.TitleBTNHeaderText}>
+                                    <span style={{ fontWeight: 500, fontSize: '20px', color: 'white' }}>Available in {CurrentCity} </span>
+                                </div>
+                                <div className={styles.TitleBTNHeaderBTN}>
+                                    <Link href='/Categories' style={{ textDecoration: 'none', color:'white' }} >
+                                        <span>
+                                            view more
+                                        </span>
                                     </Link>
                                 </div>
-                            </SwiperSlide>
-                        }
+                            </div>
+                            <Swiper
 
-                        )}
-                    </Swiper>
+                                loop={true}
+                                loopFillGroupWithBlank={true}
+                                modules={[Navigation, Autoplay]}
+                                breakpoints={{
+                                    // when window width is >= 640px
+                                    640: {
+                                        width: 640,
+                                        slidesPerView: 2,
+
+                                    },
+                                    // when window width is >= 768px
+
+                                    768: {
+                                        width: 768,
+                                        slidesPerView: 3,
+
+                                    },
+                                }}
+                                navigation={true}
+                                slidesPerGroup={1}
+                                spaceBetween={5}
+                                slidesPerView={2}
+                            >
+                                {Retdata.map((item) => {
+                                    return <SwiperSlide key={item.id} className='swiper-container_FeedSlider'>
+                                        <div key={item.id} className={styles.Sliderlist_Item}>
+                                            <Link href={`/Profile/${item.username}`} style={{ textDecoration: 'none' }} >
+                                                <div
+                                                    style={{
+                                                        position: "relative",
+                                                        width: "100%",
+                                                        height: "150px",
+                                                        backgroundColor: '#c5d6e3',
+                                                    }}
+                                                >
+                                                    <Image src={`${BASE_URL}Storage/panel/Vendorsdp/${item.dp}`} alt="Vercel Logo" layout="fill" />
+                                                </div>
+                                                <div className={styles.FeelListHData}>
+                                                    <div className={styles.FeelListHDataFlexTitle}><span style={{ fontWeight: '500' }}>{item.name}</span></div>
+                                                    <div className={styles.FeelListHDataFlex}>
+                                                        <div className={styles.FeelListHDataFlexItem}>
+                                                            <div><span><SlLocationPin /></span></div>
+                                                            <div style={{ marginTop: '-3px', marginLeft: '5px' }}><span>{item.city}</span></div>
+                                                        </div>
+                                                        <div className={styles.FeelListHDataFlexItem}>
+                                                            <div><span><SlInfo /></span></div>
+                                                            <div style={{ marginTop: '-3px', marginLeft: '5px' }}><span>{item.mainCategory}</span></div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </SwiperSlide>
+                                }
+
+                                )}
+                            </Swiper>
+                            <div style={{ height: '20px' }}></div>
+                        </div>
+                    </div>
+
                 </div>
 
             }

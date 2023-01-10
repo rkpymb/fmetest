@@ -2,6 +2,83 @@
     padding-left: 10px;
 }
 
+.CatGridItem {
+    background-color: rgb(255, 255, 255);
+    color: rgb(65, 62, 62);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(222, 213, 213);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+}
+
+.CatGridItem:hover {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.CatGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+}
+
+.CatGridItem_Loader {
+    height: 90px;
+    width: 100%;
+}
+
+.VendorGridItem_loader {
+    height: 270px;
+    width: 100%;
+}
+
+.mob_footer_menu {
+    display: none;
+    position: sticky;
+    top: 7%;
+    z-index: 999;
+    background-color: #000000;
+    min-width: 100%;
+    color: rgb(255, 255, 255);
+
+}
+
+/* vendor */
+
+
+.VendorGridItem {
+    background-color: rgb(255, 255, 255);
+    color: rgb(65, 62, 62);
+    border: 1px solid rgb(222, 213, 213);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+
+.VendorGridItem:hover {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.VendorGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+}
+
+/* vendor grid */
 .LotteSizefull {
 
     width: 100%;
@@ -29,18 +106,30 @@
     min-height: 100vh;
 }
 
+.TitleBTNHeaderBTN {
+    cursor: pointer;
+    color: white;
+}
+
+.TitleBTNHeaderBTN:hover {
+
+    color: rgb(162, 255, 0);
+}
+
+.MobileNav {
+    display: none;
+}
+
 .Navbar {
     width: 100%;
     position: sticky;
     top: 0;
     overflow: hidden;
     /* background-color: #333545; */
-    background-color: #14062b;
-
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
     z-index: 999;
 }
-
-
 
 .NavbarBox {
     margin: auto;
@@ -48,10 +137,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
+    padding: 15px;
 }
 
 .NavbarBoxLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavbarTopiconmenu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,33 +156,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+
     padding: 5px;
     cursor: pointer;
 }
 
 .Navlogo {
-    width: 90px;
+    width: 100px;
+
 }
 
 .NavBTN {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2px 15px 0px 15px;
+    margin: 2px 15px 0px 50px;
     border-radius: 5px;
     padding: 4px 15px 0px 15px;
-    background-color: #f84464;
+    background-color: #ffcc00;
 }
 
 .NavBTN_ICON {
-    color: #ffffff;
+    color: #000000;
     font-size: 20px;
 }
 
 .NavBTN_TEXT {
     margin-left: 5px;
-    color: #ffffff;
+    color: #000000;
     font-size: 15px;
     margin-top: -5px;
     font-weight: 400;
@@ -100,8 +196,34 @@
     text-decoration: none;
 }
 
+.NavbarTopiconmenuItem {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+}
+
+.NavbarTopiconmenuItem:hover {
+    color: #ffcc00;
+}
+
 .NavbarBoxRightBTNBOX Link {
     text-decoration: none;
+}
+
+.NavbarTopiconmenuItemIcon {
+
+    font-size: 30px;
+}
+
+.NavbarTopiconmenuItemText {
+    margin-left: 5px;
+    margin-top: -5px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .Navbar_WithTitle {
@@ -141,6 +263,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 500;
+
 }
 
 .Container {
@@ -150,10 +273,11 @@
     overflow: hidden;
 
 
+
 }
 
 .ContainerDesktopShowbg {
-    background-color: #eceff3;
+    background-color: #000000;
 }
 
 .ContainerDesktopShowbg_Contact {
@@ -354,15 +478,8 @@
 
 .Slider_LoaderBoxItem {
     width: 100%;
-    margin: 10px;
 }
 
-.Slider_LoaderBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
 
 .GridBox {
     max-width: 1200px;
@@ -544,7 +661,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
 }
 
 .ContactHomeBox {
@@ -598,6 +715,9 @@
 /* MOBILE CSS */
 
 @media only screen and (max-width: 900px) {
+    .mob_footer_menu {
+        display: block;
+    }
 
     .Container {
         margin: auto;
@@ -717,8 +837,81 @@
     .ContactPageBox {
         flex-direction: column;
     }
+
     .ContactPageBoxItem {
         flex-direction: column;
     }
 
+    .Navbar {
+
+        display: none;
+    }
+
+    .MobileNav {
+        display: block;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        /* background-color: #333545; */
+        background-color: #000000;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+        z-index: 999;
+    }
+
+    .MobileNavBox {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logoMobile {
+        width: 80px;
+    }
+
+    .logoMobile img {
+        width: 100%;
+    }
+
+    .MobileNavBoxRightMenuBox {
+        display: flex;
+        align-items: center;
+    }
+
+    .MobileNavBoxRightMenuITEM {
+        margin-left: 15px;
+    }
+
+    .MobileNavBoxRightMenuITEM span {
+
+        color: black;
+    }
+
+
+    .CatGridItem {
+        padding: 10px;
+    }
+
+    .CatGridItem:hover {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    .CatGrid {
+        margin: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .VendorGridItem {
+        padding: 10px;
+    }
+
+    .VendorGridItem:hover {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    .VendorGrid {
+        margin: 12px;
+
+    }
 }

@@ -11,7 +11,7 @@ const Backdropitem = (props) => {
 
               >
               <CircularProgress color="inherit" />
-              <span>Please wait..</span>
+              
           </Backdrop>
       </>
   )

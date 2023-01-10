@@ -51,6 +51,9 @@ const Footer = ({ BackDropOpen, BackDropClose }) => {
             <div style={{textAlign: 'center', fontSize:10, margin:'10px'}}>
                 <span>© 2022-2023 www.flairmyevent.com, All rights reserved.</span>  
             </div>
+            <div style={{textAlign: 'center', fontSize:10, margin:'10px'}}>
+                <span>Developed by : <Link href={`https://aitechnolog.com/`} style={{ textDecoration: 'none', color: 'white' }}>AITECHNOLOG</Link> </span>  
+            </div>
         </div>
     )
 }

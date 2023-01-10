@@ -48,10 +48,7 @@ export default () => {
         <>
 
             {isLoading &&
-                <div className={styles.Slider_LoaderBox}>
-                    <Skeleton variant="rectangular" className={styles.Slider_LoaderBoxItem} height={300} />
-
-                </div>
+                <Skeleton variant="rectangular" sx={{ bgcolor: 'grey.900' }} className={styles.Slider_LoaderBoxItem} height={267} />
             }
 
             {!isLoading &&

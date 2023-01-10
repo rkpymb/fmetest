@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import styles from '../styles/Home.module.css'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import LocationBox from '../Components/LocationBox'
+import LocationBoxMobile from '../Components/LocationBoxMobile'
 import HomeSlider from '../Components/HomeSlider'
 import CategoriesList from '../Components/CategoriesList'
 import Available from '../Components/Available'
@@ -18,7 +18,8 @@ export default function Home({ BackDropOpen, BackDropClose }) {
   const Contextdata = useContext(CheckloginContext)
   return (
     <>
-      <Navbar />
+      <Navbar BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
+      <LocationBoxMobile />
       <Head>
 
         <title>{AppName}</title>
@@ -29,32 +30,32 @@ export default function Home({ BackDropOpen, BackDropClose }) {
       </Head>
 
       <div className={styles.ContainerDesktopShowbg}>
-        <div style={{ height: '10px' }}></div>
+        
         <div className={styles.Container}>
           {Contextdata.IsLogin &&
             <div style={{ padding: '10px' }}>
               <WelcomeUser />
             </div>
           }
+         
           <div style={{ padding: '10px' }}>
-            <LocationBox BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
-          </div>
-          <div style={{ padding: '0px' }}>
             <HomeSlider />
           </div>
         </div>
         
-      </div>
-
+      </div>      
       <div className={styles.Container}>
+        <div className={styles.TitleBTNHeader}>
+          <div className={styles.TitleBTNHeaderText}>
+            <span style={{ fontWeight: 500, fontSize: '20px' }}>Browse by Category  </span>
+          </div>
 
-      </div>
-      <div className={styles.Container}>
+        </div>
         <CategoriesList />
-        <Available />
-
       </div>
-      <div className={styles.ContainerDesktopShowbg}>
+     
+      <Available />
+      <div className={styles.ContainerDesktopShowbg} style={{backgroundColor:'white'}}>
         <div className={styles.Container}>
 
           <AboutBox />
@@ -74,6 +75,7 @@ export default function Home({ BackDropOpen, BackDropClose }) {
         </div>
       </div>
       <Footer/>
+     
     </>
   )
 }

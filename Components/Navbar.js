@@ -5,57 +5,133 @@ import Link from 'next/link';
 import { SlLockOpen, SlEmotsmile } from "react-icons/sl";
 import CheckloginContext from '../context/auth/CheckloginContext'
 import { BASE_URL, AppName } from '../Data/config'
-
+import { BiMobileVibration } from "react-icons/bi";
+import { HiOutlinePlay } from "react-icons/hi";
+import { CgFeed } from "react-icons/cg";
+import LocationBox from './LocationBox'
+import { MdAmpStories } from "react-icons/md";
+import { FaUserCircle } from "react-icons/fa";
 const Navbar = ({ BackDropOpen, BackDropClose }) => {
     const Contextdata = useContext(CheckloginContext)
 
-  return (
-      <div className={styles.Navbar}>
-          <div className={styles.NavbarBox}>
-              <div className={styles.NavbarBoxLeft}>
-                  <div className={styles.logo}>
-                      <Link href='/'>
-                          <img src='/mainlogo.png' alt='logo'  className={styles.Navlogo} />
-                      </Link>
-                  </div>
-                 
-              </div>
-              <div className={styles.NavbarBoxRight}>
-                  <div className={styles.NavbarBoxRightBTNBOX}>
-                      {!Contextdata.IsLogin &&
-                          <Link href='/Login' style={{ textDecoration: 'none' }}>
-                              <div className={styles.NavBTN}>
-                                  <div className={styles.NavBTN_ICON}>
-                                      <span> <SlLockOpen /></span>
-                                  </div>
-                                  <div className={styles.NavBTN_TEXT}>
-                                      <span>Login</span>
-                                  </div>
-                              </div>
-                          </Link>
-                      }
-                      {Contextdata.IsLogin &&
-                          <Link href='/Account' style={{ textDecoration: 'none' }}>
-                              <div className={styles.UserProfileTop}>
-                                  <div>
-                                      <Image
-                                          src={`${BASE_URL}Storage/panel/userdp/${Contextdata.Data.dp}`}
-                                          alt="Picture of the author"
-                                          width={40}
-                                          height={40}
-                                      />
-                                  </div>
-                                 
-                              </div>
-                          </Link>
-                      }
-                      
-                     
-                 </div>
-              </div>
-          </div>
-    </div>
-  )
+    return (
+        <>
+            <div className={styles.Navbar}>
+                <div className={styles.NavbarBox}>
+                    <div className={styles.NavbarBoxLeft}>
+                        <div className={styles.logo}>
+                            <Link href='/'>
+                                <img src='/logo/fmelogo-dark.svg' alt='logo' className={styles.Navlogo} />
+                            </Link>
+                        </div>
+                        <div style={{ marginLeft: '10px', marginTop: '15px' }}>
+                            <LocationBox BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
+                        </div>
+                    </div>
+                    <div className={styles.NavbarBoxRight}>
+                        <div className={styles.NavbarBoxRightBTNBOX}>
+                            <div className={styles.NavbarBoxRightBTNBOX}>
+                                <Link href='/Categories' style={{ textDecoration: 'none' }} >
+                                    <div className={styles.NavbarTopiconmenuItem} >
+                                        <div className={styles.NavbarTopiconmenuItemIcon}>
+                                            <span>
+                                                <CgFeed />
+                                            </span>
+                                        </div>
+                                        <div className={styles.NavbarTopiconmenuItemText}><span> Categories</span></div>
+                                    </div>
+                                </Link>
+
+                            </div>
+
+                            <div style={{ marginLeft: '30px' }}>
+                                {!Contextdata.IsLogin &&
+                                    <Link href='/Login' style={{ textDecoration: 'none' }}>
+                                        <div className={styles.NavBTN}>
+                                            <div className={styles.NavBTN_ICON}>
+                                                <span> <SlLockOpen /></span>
+                                            </div>
+                                            <div className={styles.NavBTN_TEXT}>
+                                                <span>Login</span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                }
+                                {Contextdata.IsLogin &&
+                                    <Link href='/Account' style={{ textDecoration: 'none' }}>
+                                        <div className={styles.UserProfileTop}>
+                                            <div>
+                                                <Image
+                                                    src={`${BASE_URL}Storage/panel/userdp/${Contextdata.Data.dp}`}
+                                                    alt="Picture of the author"
+                                                    width={40}
+                                                    height={40}
+                                                />
+                                            </div>
+
+                                        </div>
+                                    </Link>
+                                }
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div className={styles.MobileNav}>
+                <div className={styles.MobileNavBox}>
+                    <div className={styles.MobileNavBoxLeft}>
+                        <div className={styles.logoMobile}>
+                            <Link href='/'>
+                                <img src='/logo/fmelogo-lightcolor.svg' alt='logo' />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className={styles.MobileNavBoxRight}>
+                        <div className={styles.MobileNavBoxRightMenuBox}>
+                            <div className={styles.MobileNavBoxRightMenuITEM}>
+                                {!Contextdata.IsLogin &&
+                                    <Link href='/Login' style={{ textDecoration: 'none' }}>
+                                        <div className={styles.NavBTN}>
+                                            <div className={styles.NavBTN_ICON}>
+                                                <span> <SlLockOpen /></span>
+                                            </div>
+                                            <div className={styles.NavBTN_TEXT}>
+                                                <span>Login</span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                }
+                                {Contextdata.IsLogin &&
+                                    <Link href='/Account' style={{ textDecoration: 'none' }}>
+                                        <div className={styles.UserProfileTop}>
+                                            <div>
+                                                <Image
+                                                    src={`${BASE_URL}Storage/panel/userdp/${Contextdata.Data.dp}`}
+                                                    alt="Picture of the author"
+                                                    width={40}
+                                                    height={40}
+                                                />
+                                            </div>
+
+                                        </div>
+                                    </Link>
+                                }
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                
+
+            </div>
+        </>
+    )
 }
 
 export default Navbar
