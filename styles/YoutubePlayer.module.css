@@ -1,0 +1,26 @@
+.YTPlayer {
+    width: 100%;
+    margin: auto;
+    padding: 0px;
+    background-color: rgb(0, 0, 0);
+}
+.YTPlayer_controllsBox{
+    background-color:white;
+    border-radius:5px;
+    border: 1px solid rgb(255, 0, 0);
+    margin-top:-50px;
+    min-height: 30px;
+    width: 90%;
+    z-index: 9999;
+   
+}
+
+.Container {
+    margin: auto;
+    width: 80%;
+    color: #3c4852;
+    overflow: hidden;
+
+
+
+}

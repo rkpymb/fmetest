@@ -6,6 +6,8 @@ import { BASE_URL, AppName } from '../Data/config'
 import Image from 'next/image'
 import Link from 'next/link'
 import Skeleton from '@mui/material/Skeleton';
+import UserCounter from '../Components/Cards/UserCounter'
+import EditProfile from '../Components/Oprations/EditProfile'
 import { SlInfo, SlLocationPin, SlCheck } from "react-icons/sl";
 import Navbar from '../Components/Navbar'
 import CheckloginContext from '../context/auth/CheckloginContext'
@@ -15,7 +17,8 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Bookinglist from '../Components/UserProfile/Bookinglist';
-const Account = (VendorData) => {
+import MyFavList from '../Components/UserProfile/MyFavList';
+const Account = ({ BackDropOpen, BackDropClose }) => {
   const Contextdata = useContext(CheckloginContext)
   const router = useRouter();
   const [value, setValue] = React.useState('MyAccount');
@@ -53,7 +56,12 @@ const Account = (VendorData) => {
               </div>
             </div>
           </div>
+          
         </div>
+        <div>
+          <UserCounter UserMobile={Contextdata.Data.mobile} />
+        </div>
+        
       </div>
     </div>
     <div style={{ backgroundColor: 'white' }}>
@@ -71,13 +79,13 @@ const Account = (VendorData) => {
               </Box>
             </div>
             <TabPanel value="MyAccount">
-              My Acount is coming soon
+              <EditProfile Data={Contextdata.Data} BackDropClose={BackDropClose} BackDropOpen={BackDropOpen} />
             </TabPanel>
             <TabPanel value="MyBooking">
               <Bookinglist UserMobile={Contextdata.Data.mobile} />
             </TabPanel>
             <TabPanel value="MyFavorites">
-              My Favorites is coming soon
+              <MyFavList UserMobile={Contextdata.Data.mobile} />
             </TabPanel>
             
 

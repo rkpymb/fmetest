@@ -27,6 +27,7 @@
     "react-icons": "^4.7.1",
     "react-lite-youtube-embed": "^2.3.52",
     "react-lottie": "^1.2.3",
+    "react-player": "^2.11.0",
     "react-top-loading-bar": "^2.3.1",
     "shortid": "^2.2.16",
     "styled-components": "^5.3.6",

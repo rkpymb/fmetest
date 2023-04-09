@@ -43,64 +43,64 @@ const CategoriesList = () => {
             {isLoading &&
                 <div className={styles.CatGrid}>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90} />
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     <div className={styles.CatGridItem}>
-                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} />
+                        <Skeleton variant="rounded" className={styles.CatGridItem_Loader} height={90}/>
                     </div>
                     
                    

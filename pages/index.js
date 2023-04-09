@@ -14,12 +14,31 @@ import Reviews from '../Components/HomePage/Reviews'
 import ContactBox from '../Components/HomePage/ContactBox'
 import CheckloginContext from '../context/auth/CheckloginContext'
 import { BASE_URL, AppName } from '../Data/config'
+import { useRouter } from 'next/router'
 export default function Home({ BackDropOpen, BackDropClose }) {
+  const router = useRouter()
   const Contextdata = useContext(CheckloginContext)
+  const [MobileLocationBox, setMobileLocationBox] = useState(true);
+  useEffect(() => {
+    try {
+      if (localStorage.getItem('Pincode')) {
+        setMobileLocationBox(true)
+      } else {
+        setMobileLocationBox(false)
+      }
+    } catch (error) {
+      console.error(error)
+      // localStorage.clear()
+    }
+  }, [router.query]);
   return (
     <>
       <Navbar BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
-      <LocationBoxMobile />
+      {MobileLocationBox &&
+        <LocationBoxMobile BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
+
+      }
+     
       <Head>
 
         <title>{AppName}</title>

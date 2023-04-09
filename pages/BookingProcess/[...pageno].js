@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router'
 import styles from '../../styles/Home.module.css'
 import Head from 'next/head'
 import { BASE_URL, AppName } from '../../Data/config'
 import Image from 'next/image'
 import Link from 'next/link'
+import CheckloginContext from '../../context/auth/CheckloginContext.js'
 import Skeleton from '@mui/material/Skeleton';
 import { SlInfo, SlLocationPin, SlCheck } from "react-icons/sl";
 import NavbarWithTitle from '../../Components/NavbarWithTitle'
@@ -26,7 +27,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import Lottie from 'react-lottie';
-import * as animationData from '../../Data/Lottie/46690-calendar-booking.json'
+import * as animationData from '../../Data/Lottie/59945-success-confetti.json'
 const Slug = ({ PlanData, BackDropClose, BackDropOpen }) => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -36,20 +37,20 @@ const Slug = ({ PlanData, BackDropClose, BackDropOpen }) => {
     const [CityNameData, setCityNameData] = useState('');
     const [PincodeData, setPincodeData] = useState('');
     const [StateName, setStateName] = useState('');
-    const [DateValue, setDateValue] = React.useState(dayjs());
-    const [TimeValue, setTimeValue] = React.useState(dayjs());
+    const [DateValue, setDateValue] = useState(dayjs());
+    const [TimeValue, setTimeValue] = useState(dayjs());
     const [isalert, setIsalert] = useState(false);
     const [ShowDone, setShowDone] = useState(false);
     const [AlertText, setAlertText] = useState('');
     const [UserMobNow, setUserMobNow] = useState('');
     const [BookingID, setBookingID] = useState('');
-    const [PageTite, sePageTite] = useState('Booking  for : '+PData.RetData.Title);
-    const [value, setValue] = React.useState(dayjs());
-
+    const [PageTite, sePageTite] = useState('Booking  for : ' + PData.RetData.Title);
+    const [value, setValue] = useState(dayjs());
+    const Contextdata = useContext(CheckloginContext)
     const handleChange = (newValue) => {
         setValue(newValue);
     };
-   
+
 
 
 
@@ -67,7 +68,7 @@ const Slug = ({ PlanData, BackDropClose, BackDropOpen }) => {
             const VendorMobile = PData && PData.RetData.VendorMobile;
             const UserMob = UserMobNow;
             const PlanID = PData && PData.RetData.id;
-            const BookingDateTime = value ;
+            const BookingDateTime = value;
             const CityName = CityNameData;
             const Pincode = PincodeData;
             const FullAddress = Address + ', ' + Pincode;
@@ -83,7 +84,7 @@ const Slug = ({ PlanData, BackDropClose, BackDropOpen }) => {
             })
                 .then((parsedBooked) => {
                     if (parsedBooked.statusdata == true) {
-                        sePageTite('Booking Successful ☑️')
+                        sePageTite('Booking Successful 👍')
                         BackDropClose()
                         setShowDone(true)
                         setBookingID(parsedBooked.dataret)
@@ -111,27 +112,30 @@ const Slug = ({ PlanData, BackDropClose, BackDropOpen }) => {
         }
     }
     useEffect(() => {
+        if (Contextdata.IsLogin == true) {
+            try {
+                if (localStorage.getItem('Pincode') && localStorage.getItem('userid')) {
+                    const PincodeNow = localStorage.getItem('Pincode');
+                    const StateNow = localStorage.getItem('State');
+                    const CityNow = localStorage.getItem('City');
+                    const userid = localStorage.getItem('userid');
+                    setPincodeData(PincodeNow)
+                    setStateName(StateNow)
+                    setCityNameData(CityNow)
+                    setUserMobNow(userid)
+                    setIsLoading(false)
 
-        try {
-            if (localStorage.getItem('Pincode') && localStorage.getItem('userid')) {
-                const PincodeNow = localStorage.getItem('Pincode');
-                const StateNow = localStorage.getItem('State');
-                const CityNow = localStorage.getItem('City');
-                const userid = localStorage.getItem('userid');
-                setPincodeData(PincodeNow)
-                setStateName(StateNow)
-                setCityNameData(CityNow)
-                setUserMobNow(userid)
-                setIsLoading(false)
-
-            } else {
-
+                } else {
+                    router.push('/')
+                }
+            } catch (error) {
+                console.error(error)
             }
-        } catch (error) {
-            console.error(error)
-            // localStorage.clear()
+        } else {
+            router.push('/Login')
         }
     });
+
 
     return <div>
         <NavbarWithTitle Title={PageTite} />
@@ -252,8 +256,8 @@ const Slug = ({ PlanData, BackDropClose, BackDropOpen }) => {
         }
         {ShowDone &&
             <div>
-                <div style={{ backgroundColor: 'green' }}>
-                    <div style={{ textAlign: 'center', padding: '5px', color: 'white' }}><span>Total Saved on this Booking
+                <div style={{ backgroundColor: '#50d05c' }}>
+                    <div style={{ textAlign: 'center', padding: '5px', color: 'white' }}><span>Total Discounted for you :
                         <span style={{ fontWeight: 500, }}> ₹{PData.RetData.MainPrice - PData.RetData.SalePrice} </span>
                     </span></div>
                 </div>
@@ -267,19 +271,22 @@ const Slug = ({ PlanData, BackDropClose, BackDropOpen }) => {
                                 isPaused={false} />
                         </div>
                         <div className={styles.DoneBOXDATA}>
-                            <div style={{ fontSize: 25,color:'black', }}>
-                                <span>☑️ Booking Succesfully Created</span>
+                            <div style={{ fontSize: 20, color: '#50d05c', }}>
+                                <span>😎 Booking Succesfully Created</span>
                             </div>
-                            <div style={{ fontSize: 15, color: 'black', fontWeight: 'bold' }}>
+                            <div style={{ height: '20px' }}></div>
+                            <div style={{ fontSize: 30, color: 'black', fontWeight: '200' }}>
                                 <span>Booking ID : #{BookingID}</span>
                             </div>
-                            <div style={{ fontSize: 15,color:'green' }}>
+                            <div style={{ height: '20px' }}></div>
+                            <div style={{ fontSize: 15, color: 'green' }}>
                                 <span>You Booking Request is Successfully sent to Rajkumar. your order will be confirmed shortly.</span>
                             </div>
+                        
                             <div style={{ fontSize: 15, color: 'green' }}>
                                 <span>Wait for a few minutes. we will keep updated you regarding status of this Booking, please Check your Email for more details. Thank you </span>
                             </div>
-                            <div style={{ height: '20px' }}></div>
+                            <div style={{ height: '100px' }}></div>
                             <Button variant="contained" onClick={() => router.push('/')}>Visit Home Page</Button>
                         </div>
                     </div>

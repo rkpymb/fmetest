@@ -45,9 +45,9 @@ const Photos = ({ UserMobile }) => {
     <div>
           {isLoading &&
               <div className={styles.GridBox}>
-                  <Skeleton variant="rectangular" className={styles.LoaderSkeltonBookinglist} />
-                  <Skeleton variant="rectangular" className={styles.LoaderSkeltonBookinglist} />
-                  <Skeleton variant="rectangular" className={styles.LoaderSkeltonBookinglist} />
+                  <Skeleton variant="rectangular" className={styles.LoaderSkeltonBookinglist} height={150} />
+                  <Skeleton variant="rectangular" className={styles.LoaderSkeltonBookinglist} height={150} />
+                  <Skeleton variant="rectangular" className={styles.LoaderSkeltonBookinglist} height={150} />
               </div>
           }
           {!isLoading &&

@@ -1,3 +1,4 @@
+
 .ContainerSliderTop {
     padding-left: 10px;
 }
@@ -231,18 +232,19 @@
     position: sticky;
     top: 0;
     overflow: hidden;
-    background-color: #14062b;
+    background-color: #ffffff;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
     z-index: 999;
+
 }
 
 .NavbarBox_WithTitle {
     margin: auto;
-    width: 70%;
+    width: 80%;
     display: flex;
     align-items: center;
     padding: 5px;
-    color: white;
+    color: rgb(0, 0, 0);
     min-height: 50px;
 }
 
@@ -375,6 +377,41 @@
 
 .SwipeableDrawer {
     background-color: rgba(0, 0, 0, 0.099);
+}
+.FavBTN{
+    font-size: 30px;
+    cursor: pointer;
+
+}
+.MyFavITEMBOX{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+   
+}
+.MyFavITEMBOX_DATA{
+    margin-left: 10px;
+}
+.MyFavITEMBOX_IMG{
+    min-width:100px;
+}
+.UserCounter{
+    width: 100%;
+}
+.UserCounterBox{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.UserCounterBoxITEM{
+    margin: 5px;
+    min-width:20%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .LocationFlex {

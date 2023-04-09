@@ -6,6 +6,22 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+/* youtube */
+#widget12{
+  padding:0px;
+}
+
+.mejs__mediaelement iframe,
+iframe {
+  pointer-events: none;
+}
+
+.toolbar {
+  display: none;
+} 
+
+/* youtube */
+
 .h5 {
   min-height: 5px;
 }

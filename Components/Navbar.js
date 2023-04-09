@@ -41,7 +41,7 @@ const Navbar = ({ BackDropOpen, BackDropClose }) => {
                                         <div className={styles.NavbarTopiconmenuItemText}><span> Categories</span></div>
                                     </div>
                                 </Link>
-
+                             
                             </div>
 
                             <div style={{ marginLeft: '30px' }}>
@@ -63,7 +63,7 @@ const Navbar = ({ BackDropOpen, BackDropClose }) => {
                                             <div>
                                                 <Image
                                                     src={`${BASE_URL}Storage/panel/userdp/${Contextdata.Data.dp}`}
-                                                    alt="Picture of the author"
+                                                    alt=""
                                                     width={40}
                                                     height={40}
                                                 />
@@ -111,7 +111,7 @@ const Navbar = ({ BackDropOpen, BackDropClose }) => {
                                             <div>
                                                 <Image
                                                     src={`${BASE_URL}Storage/panel/userdp/${Contextdata.Data.dp}`}
-                                                    alt="Picture of the author"
+                                                    alt=""
                                                     width={40}
                                                     height={40}
                                                 />

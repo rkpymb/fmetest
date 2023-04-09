@@ -82,28 +82,28 @@ const Slug = ({ CatSlug, BackDropClose, BackDropOpen }) => {
                     <div style={{ height: '30px' }}></div>
                     <div className={styles.VendorGrid}>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
                         <div className={styles.VendorGridItem}>
-                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} />
+                            <Skeleton variant="rounded" className={styles.VendorGridItem_loader} height={270}/>
                         </div>
 
                     </div>

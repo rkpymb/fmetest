@@ -157,7 +157,8 @@ export default function Home({ BackDropOpen, BackDropClose }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fevicon.png" />
       </Head>
-      <div className={styles.Container}>
+      <div >
+<div className={styles.Container}>
         <div style={{ padding: '10px' }}>
           <div className={styles.LoginHeroBox}>
             <div className={styles.LoginHeroBoxA}>
@@ -219,6 +220,9 @@ export default function Home({ BackDropOpen, BackDropClose }) {
           </div>
         </div>
       </div>
+
+      </div>
+      
     </>
   )
 }
