@@ -66,7 +66,7 @@ const Reviews = ({ VendorMobile }) => {
                     <div>{[...Array.from(Array(parseInt(item.Starts)).keys())].map((num, i) => <span key={i}>⭐</span>)} {item.Starts}/5 stars</div>
                   </div>
                   <div className={styles.ReviewText}>{item.ReviewText}</div>
-                  <div style={{ fontSize: '8px' }}>{item.date}</div>
+                  {/* <div style={{ fontSize: '8px' }}>{item.date}</div> */}
                 </div>
               </div>
             }

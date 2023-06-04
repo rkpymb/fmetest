@@ -1,11 +1,146 @@
-
 .ContainerSliderTop {
     padding-left: 10px;
 }
 
+.FooterBox_socialIcons a {
+    text-decoration: none;
+    color: white;
+
+}
+
+/* Footer */
+.Bottom_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+}
+
+.FooterBox {
+    min-height: 300px;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.FooterBox_compnay {
+    width: 30%;
+}
+
+.FooterBox_socialIcons span {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.FooterBox_menu li {
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.FooterBox_menu li:hover {
+    color: rgb(255, 140, 0);
+}
+
+.FooterBox_address {
+    width: 30%;
+}
+
+.FooterBox_address_item {
+    margin-top: 10px;
+    display: flex;
+}
+
+.FooterBox_address_item small {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.AppLogoBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff0000;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.AppLogoBoxA {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.AppLogoBoxB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.PassHeroBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.PassHeroBoxA {
+    width: 40%;
+}
+
+.PassHeroBoxB {
+    width: 40%;
+}
+
+.PassHeroItemBox {
+    display: flex;
+    width: 100%;
+}
+
+.PassHeroItem {
+    display: flex;
+    align-items: center;
+    min-width: 50%;
+}
+
+.IconPassheroimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+
+}
+
+.PassHeroBoxAImg {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.PassHeroBoxAImg img {
+    width: 100%;
+}
+
 .CatGridItem {
-    background-color: rgb(255, 255, 255);
-    color: rgb(65, 62, 62);
+    /* background-color: #9990ff; */
+    /* color: rgb(65, 62, 62);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +150,213 @@
     padding: 5px;
     cursor: pointer;
     overflow: hidden;
+    text-align: center; */
+    background-color: none;
+
+}
+
+.centeritem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
+
+.HeroBox2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HeroBox2A {
+    width: 50%;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.HeroBox2B img {
+    width: 80%;
+}
+
+.containerHero {
+    background-color: #efecff;
+}
+
+.HeroBox2B {
+
+    padding: 10px;
+    width: 50%;
+}
+
+.FeaturesItem {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.FeaturesItemImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.FeaturesItemText {
+    margin-left: 10px;
+}
+
+.FeaturesItemText span {
+    font-weight: 500;
+}
+
+.feedBoxItem {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(222, 213, 213);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.feedBoxItemx {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(222, 213, 213);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.GetStartedBTN {
+    background-color: rgb(28, 26, 26);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.GetStartedBTN:hover {
+    background-color: #fe8f49;
+    color: rgb(0, 0, 0);
+
+}
+
+.feedBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CourseListBox {
+    position: relative;
+    padding: 10px;
+
+}
+
+.CourseGrid {
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+}
+
+.CourseItems {
+    cursor: pointer;
+    text-align: center;
+    color: #3c4852;
+    border: 1px solid #e2e4e6;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+.CourseItemsData {
+
+    color: #3c4852;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+}
+
+.CourseItemstitlebox {
+    min-height: 50px;
+    overflow: hidden;
+}
+
+/* course sticker */
+.coursestickerBox {
+    display: flex;
+}
+
+.coursestickerBoxFooter {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px dashed #e2e4e6;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.coursestickerBoxDiscountTag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coursestickerBoxDiscountTag small {
+    margin-left: 5px;
+    margin-top: -4px;
+    color: #ab8352;
+}
+
+.coursestickerItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    font-size: 12px;
+}
+
+.coursestickerItem img {
+    width: 12px;
+}
+
+.coursestickerItemtext {
+    margin-left: 5px;
+    margin-top: -2px;
+    font-weight: 500;
+}
+
+.coursestickerItemtext span {
+    font-size: 10px;
+}
+
+.EnrollBtn {
+
+    background-color: #292b65;
+    color: white;
+    padding: 2px 20px 5px 20px;
+    width: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    text-transform: capitalize;
+    cursor: pointer;
+    min-width: max-content;
 }
 
 .CatGridItem:hover {
@@ -23,7 +364,7 @@
 }
 
 .CatGrid {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     display: grid;
     gap: 1rem;
@@ -41,16 +382,16 @@
     width: 100%;
 }
 
-.mob_footer_menu {
-    display: none;
-    position: sticky;
-    top: 7%;
-    z-index: 999;
-    background-color: #000000;
-    min-width: 100%;
-    color: rgb(255, 255, 255);
+.mobLocation {
+    background-color: #ffffff;
+    color: rgb(32, 30, 30);
+    margin: 0 auto;
+    width: 80%;
 
 }
+
+
+
 
 /* vendor */
 
@@ -273,22 +614,51 @@
     width: 80%;
     color: #3c4852;
     overflow: hidden;
-
-
-
 }
 
-.ContainerDesktopShowbg {
-    background-color: #000000;
-}
 
 .ContainerDesktopShowbg_Contact {
     background-color: #404043;
 }
 
+.ContainerWithimg {
+    background-image: url('../public/learning-4264032_1920.jpg');
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+
+.onlymobile {
+    display: none;
+}
+
+.Opac {
+    background-color: rgba(255, 0, 0, 0.596);
+    padding: 50px;
+}
+
+.CatHomeBox {
+    background-color: rgb(255, 255, 255);
+    z-index: 9999;
+    margin: auto;
+    margin-top: -20px;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 .CatBox {
     display: flex;
 
+}
+
+.LoaderBoxNew {
+    /* background-color: white; */
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 
@@ -307,6 +677,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.CatBoxItemCenterimg {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #e1dcfa;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.CatBoxItemCenterTitle {
+    text-align: center;
+}
+
+.CatBoxItemCenterTitle span {
+    color: black;
+
 }
 
 .FeelListH {
@@ -378,35 +771,42 @@
 .SwipeableDrawer {
     background-color: rgba(0, 0, 0, 0.099);
 }
-.FavBTN{
+
+.FavBTN {
     font-size: 30px;
     cursor: pointer;
 
 }
-.MyFavITEMBOX{
+
+.MyFavITEMBOX {
     display: flex;
     align-items: center;
     cursor: pointer;
     font-weight: 500;
-   
+
 }
-.MyFavITEMBOX_DATA{
+
+.MyFavITEMBOX_DATA {
     margin-left: 10px;
 }
-.MyFavITEMBOX_IMG{
-    min-width:100px;
+
+.MyFavITEMBOX_IMG {
+    min-width: 100px;
 }
-.UserCounter{
+
+.UserCounter {
     width: 100%;
 }
-.UserCounterBox{
+
+.UserCounterBox {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
-.UserCounterBoxITEM{
+
+.UserCounterBoxITEM {
     margin: 5px;
-    min-width:20%;
+    min-width: 20%;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -750,6 +1150,38 @@
 
 
 /* MOBILE CSS */
+/* primary color #f39b83; */
+.mob_footer_menu {
+    display: none;
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    background-color: #ffffff;
+    min-width: 100%;
+    color: black;
+
+}
+
+.mob_footer_menu_items {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.mobmenu_icon {
+    font-size: 20px;
+}
+
+.footer_menu_btn {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+
+}
 
 @media only screen and (max-width: 900px) {
     .mob_footer_menu {
@@ -927,16 +1359,17 @@
 
 
     .CatGridItem {
-        padding: 10px;
+        padding: 5px;
     }
 
     .CatGridItem:hover {
-        border: 1px solid rgb(0, 0, 0);
+        border: none;
     }
 
     .CatGrid {
-        margin: 12px;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        margin: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
     }
 
     .VendorGridItem {
@@ -951,4 +1384,89 @@
         margin: 12px;
 
     }
+
+    .CatHomeBox {
+        width: 100%;
+        padding: 0;
+    }
+
+    .Opac {
+        background-color: rgba(255, 0, 0, 0.596);
+        padding: 10px;
+    }
+
+    .onlymobile {
+        display: block;
+        min-height: 15px
+    }
+
+    .titlebxcenter {
+        text-align: center;
+    }
+
+    .HeroBox2 {
+        flex-wrap: wrap-reverse;
+    }
+
+    .HeroBox2A {
+        width: 100%;
+    }
+
+    .HeroBox2B {
+        width: 100%;
+
+    }
+
+    .PassHeroBox {
+        flex-wrap: wrap;
+
+    }
+
+    .PassHeroBoxA {
+        padding: 10px;
+        width: 100%;
+
+    }
+
+    .PassHeroBoxB {
+        padding: 10px;
+        width: 100%;
+
+    }
+
+    .AppLogoBox {
+        flex-wrap: wrap;
+
+    }
+
+    .AppLogoBoxA {
+        width: 100%;
+
+    }
+
+    .AppLogoBoxB {
+        width: 100%;
+
+    }
+
+    .FooterBox_compnay {
+        width: 100%;
+    }
+
+    .FooterBox_address {
+        width: 100%;
+    }
+
+    .FooterBox_menu {
+        width: 100%;
+    }
+
+    .mobLocation {
+        background-color: #fff7f7;
+        color: rgb(0, 0, 0);
+        width: 100%;
+
+    }
+
+
 }

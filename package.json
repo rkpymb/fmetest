@@ -17,6 +17,7 @@
     "@mui/styled-engine-sc": "^5.11.0",
     "@mui/x-date-pickers": "^5.0.12",
     "@next/font": "13.1.1",
+    "@sayings/react-reels": "^1.0.2",
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
     "next": "13.1.1",
@@ -27,10 +28,11 @@
     "react-icons": "^4.7.1",
     "react-lite-youtube-embed": "^2.3.52",
     "react-lottie": "^1.2.3",
-    "react-player": "^2.11.0",
+    "react-player": "^2.12.0",
     "react-top-loading-bar": "^2.3.1",
     "shortid": "^2.2.16",
     "styled-components": "^5.3.6",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "video-react": "^0.16.0"
   }
 }

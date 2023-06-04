@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['aitechnolog.com', 'themoviedb.org'],
+    domains: ['aitechnolog.com', 'themoviedb.org', 'core.flairmyevent.com'],
   },
 }
 

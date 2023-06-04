@@ -2,12 +2,14 @@ import Head from 'next/head'
 import { useState, useEffect, useContext } from 'react';
 import styles from '../styles/Home.module.css'
 import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
-import LocationBoxMobile from '../Components/LocationBoxMobile'
+import Footer from '../Components/footerNew'
+import FooterMenu from '../Components/FooterMenu'
+
 import HomeSlider from '../Components/HomeSlider'
 import CategoriesList from '../Components/CategoriesList'
 import Available from '../Components/Available'
-import WelcomeUser from '../Components/WelcomeUser'
+import AppHeroBox from '../Components/AppHeroBox'
+import HeroBox2 from '../Components/HomePage/HeroBox2'
 import AboutBox from '../Components/HomePage/AboutBox'
 import AboutAccordion from '../Components/HomePage/AboutAccordion'
 import Reviews from '../Components/HomePage/Reviews'
@@ -18,7 +20,7 @@ import { useRouter } from 'next/router'
 export default function Home({ BackDropOpen, BackDropClose }) {
   const router = useRouter()
   const Contextdata = useContext(CheckloginContext)
-  const [MobileLocationBox, setMobileLocationBox] = useState(true);
+
   useEffect(() => {
     try {
       if (localStorage.getItem('Pincode')) {
@@ -34,11 +36,7 @@ export default function Home({ BackDropOpen, BackDropClose }) {
   return (
     <>
       <Navbar BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
-      {MobileLocationBox &&
-        <LocationBoxMobile BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
-
-      }
-     
+    
       <Head>
 
         <title>{AppName}</title>
@@ -48,33 +46,27 @@ export default function Home({ BackDropOpen, BackDropClose }) {
         <link rel='manifest' href='/manifest.json' />
       </Head>
 
-      <div className={styles.ContainerDesktopShowbg}>
-        
-        <div className={styles.Container}>
-          {Contextdata.IsLogin &&
-            <div style={{ padding: '10px' }}>
-              <WelcomeUser />
-            </div>
-          }
-         
-          <div style={{ padding: '10px' }}>
-            <HomeSlider />
-          </div>
-        </div>
-        
-      </div>      
-      <div className={styles.Container}>
-        <div className={styles.TitleBTNHeader}>
-          <div className={styles.TitleBTNHeaderText}>
-            <span style={{ fontWeight: 500, fontSize: '20px' }}>Browse by Category  </span>
-          </div>
+      <div className={styles.ContainerWithimg}>
+
+        <div className={styles.Opac}>
+          <HomeSlider />
 
         </div>
+
+      </div>
+      <div className={styles.onlymobile}> </div>
+      <div className={styles.CatHomeBox}>
+        <div style={{ height: '5px' }}></div>
+        <div className={styles.titlebxcenter}>
+          <span style={{ fontWeight: 500, fontSize: '18px' }}>👉 Browse talent by category </span>
+        </div>
+        <div style={{ height: '10px' }}></div>
         <CategoriesList />
       </div>
-     
+
       <Available />
-      <div className={styles.ContainerDesktopShowbg} style={{backgroundColor:'white'}}>
+     
+      <div className={styles.ContainerDesktopShowbg} style={{ backgroundColor: 'white' }}>
         <div className={styles.Container}>
 
           <AboutBox />
@@ -82,18 +74,25 @@ export default function Home({ BackDropOpen, BackDropClose }) {
           <div style={{ height: '30px' }}></div>
         </div>
       </div>
+      <div style={{ height: '30px' }}> </div>
+      <div className={styles.container_full} style={{ backgroundColor: 'white' }}>
+        <div className={styles.container} >
+          <AppHeroBox />
+        </div>
+      </div>
+      <div style={{ height: '100px' }}> </div>
+
       <div>
         <div className={styles.Container}>
           <Reviews />
           <div style={{ height: '30px' }}></div>
         </div>
       </div>
-      <div className={styles.ContainerDesktopShowbg_Contact}>
-        <div className={styles.Container}>
-          <ContactBox />
-        </div>
+      <div className={styles.container_full} style={{ backgroundColor: '#232323' }} >
+        <Footer />
       </div>
-      <Footer/>
+      <FooterMenu />
+     
      
     </>
   )

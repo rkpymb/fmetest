@@ -16,7 +16,7 @@ import { useRouter } from 'next/router'
 import { BASE_URL } from '../Data/config'
 
 import Skeleton from '@mui/material/Skeleton';
-
+import { FiCoffee, FiAward, FiAlertCircle } from "react-icons/fi";
 import Button from '@mui/material/Button';
 import { SlLocationPin, SlInfo } from "react-icons/sl";
 
@@ -95,50 +95,26 @@ export default function SliderTopHome() {
             {ShowData &&
                 <div>
                     <div style={{ height: '30px' }}></div>
-                    <div className={styles.ContainerDesktopShowbg} style={{ backgroundColor: 'black' }}>
+                    <div className={styles.ContainerDesktopShowbg} style={{ backgroundColor: 'white' }}>
                         <div className={styles.Container}>
                             <div style={{ height: '20px' }}></div>
                             <div className={styles.TitleBTNHeader}>
                                 <div className={styles.TitleBTNHeaderText}>
-                                    <span style={{ fontWeight: 500, fontSize: '20px', color: 'white' }}>Available in {CurrentCity} </span>
+                                    <span style={{ fontWeight: 500, fontSize: '20px'}}>Available in {CurrentCity} </span>
                                 </div>
                                 <div className={styles.TitleBTNHeaderBTN}>
-                                    <Link href='/Categories' style={{ textDecoration: 'none', color:'white' }} >
+                                    <Link href='/Categories' style={{ textDecoration: 'none'}} >
                                         <span>
                                             view more
                                         </span>
                                     </Link>
                                 </div>
                             </div>
-                            <Swiper
-
-                                loop={true}
-                                loopFillGroupWithBlank={true}
-                                modules={[Navigation, Autoplay]}
-                                breakpoints={{
-                                    // when window width is >= 640px
-                                    640: {
-                                        width: 640,
-                                        slidesPerView: 2,
-
-                                    },
-                                    // when window width is >= 768px
-
-                                    768: {
-                                        width: 768,
-                                        slidesPerView: 3,
-
-                                    },
-                                }}
-                                navigation={true}
-                                slidesPerGroup={1}
-                                spaceBetween={5}
-                                slidesPerView={2}
-                            >
-                                {Retdata.map((item) => {
-                                    return <SwiperSlide key={item.id} className='swiper-container_FeedSlider'>
-                                        <div key={item.id} className={styles.Sliderlist_Item}>
-                                            <Link href={`/Profile/${item.username}`} style={{ textDecoration: 'none' }} >
+                            <div className={styles.CourseListBox}>
+                                <div className={styles.CourseGrid}>
+                                    {Retdata.map((item) => {
+                                        return <Link href={`/Profile/${item.username}`} style={{ textDecoration: 'none' }} key={item.id}>
+                                            <div className={styles.CourseItems}>
                                                 <div
                                                     style={{
                                                         position: "relative",
@@ -149,27 +125,52 @@ export default function SliderTopHome() {
                                                 >
                                                     <Image src={`${BASE_URL}Storage/panel/Vendorsdp/${item.dp}`} alt="Vercel Logo" layout="fill" />
                                                 </div>
-                                                <div className={styles.FeelListHData}>
-                                                    <div className={styles.FeelListHDataFlexTitle}><span style={{ fontWeight: '500' }}>{item.name}</span></div>
-                                                    <div className={styles.FeelListHDataFlex}>
-                                                        <div className={styles.FeelListHDataFlexItem}>
-                                                            <div><span><SlLocationPin /></span></div>
-                                                            <div style={{ marginTop: '-3px', marginLeft: '5px' }}><span>{item.city}</span></div>
+
+                                                <div className={styles.CourseItemsData}>
+                                                    <div className={styles.CourseItemstitlebox}>
+                                                        <span><b>{item.name}</b></span>
+                                                    </div>
+                                                   
+                                                   
+                                                    <div className={styles.coursestickerBoxFooter}>
+                                                        <div className={styles.coursestickerBoxDiscountTag}>
+                                                            <div className={styles.coursestickerBox}>
+                                                                <div className={styles.coursestickerItem}>
+                                                                    <div>
+                                                                        <SlLocationPin />
+                                                                    </div>
+                                                                    <div className={styles.coursestickerItemtext}>
+                                                                        <span>{item.city}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className={styles.coursestickerItem}>
+                                                                    <div>
+                                                                        <SlInfo />
+                                                                    </div>
+                                                                    <div className={styles.coursestickerItemtext}>
+                                                                        <span>{item.mainCategory}</span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
-                                                        <div className={styles.FeelListHDataFlexItem}>
-                                                            <div><span><SlInfo /></span></div>
-                                                            <div style={{ marginTop: '-3px', marginLeft: '5px' }}><span>{item.mainCategory}</span></div>
+                                                        <div className={styles.EnrollBtn}>
+                                                            <span>Book now</span>
                                                         </div>
                                                     </div>
-
                                                 </div>
-                                            </Link>
-                                        </div>
-                                    </SwiperSlide>
-                                }
 
-                                )}
-                            </Swiper>
+                                            </div>
+                                        </Link>
+                                    }
+
+                                    )}
+
+
+                                </div>
+
+
+                            </div>
                             <div style={{ height: '20px' }}></div>
                         </div>
                     </div>

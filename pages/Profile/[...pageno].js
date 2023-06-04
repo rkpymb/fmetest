@@ -19,6 +19,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import AddToFav from '../../Components/Oprations/AddToFav';
 import AddVisitors from '../../Components/Oprations/AddVisitors';
 import Photos from '../../Components/VendorProfile/Photos';
+import Feeds from '../../Components/VendorProfile/Feeds';
 import Videos from '../../Components/VendorProfile/Videos';
 import Reviews from '../../Components/VendorProfile/Reviews';
 import BookingPlans from '../../Components/VendorProfile/BookingPlans';
@@ -149,6 +150,7 @@ const Slug = (VendorData) => {
                             <TabList onChange={handleChange} aria-label="lab API tabs example" variant="scrollable"
                                 allowScrollButtonsMobile scrollButtons={false} >
                                 <Tab label="Booking Plans" value="Booking" />
+                                <Tab label="Feeds" value="Feeds" />
                                 <Tab label="Photos" value="Photos" />
                                 <Tab label="Videos" value="Videos" />
                                 <Tab label="Reviews" value="Reviews" />
@@ -158,6 +160,9 @@ const Slug = (VendorData) => {
 
                     <TabPanel value="Booking">
                         <BookingPlans VendorMobile={VDATA && VDATA.VendorData.RetData.mobile} />
+                    </TabPanel>
+                    <TabPanel value="Feeds">
+                        <Feeds VendorMobile={VDATA && VDATA.VendorData.RetData.mobile} />
                     </TabPanel>
                     <TabPanel value="Photos">
                         <Photos VendorMobile={VDATA && VDATA.VendorData.RetData.mobile} />

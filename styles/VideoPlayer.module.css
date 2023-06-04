@@ -1,0 +1,190 @@
+.FeedBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: auto;
+    width: 27%;
+    overflow: hidden;
+
+}
+.FeedBoxNext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    margin: auto;
+    width: 35%;
+    overflow: hidden;
+
+}
+.FeedBoxnext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: auto;
+    width: 50%;
+    overflow: hidden;
+
+}
+
+.FeedBoxmain {
+    background-color: rgb(23, 22, 22);
+
+}
+
+.ReelsItem {
+    border-radius: 10px;
+    margin: 10px;
+    height: 93.0vh;
+    overflow: hidden;
+
+}
+
+.videobox video {
+    width: 100%;
+}
+
+.FeedUserBox {
+    margin-top: -95px;
+    background-color: rgba(0, 0, 0, 0.612);
+    position: relative;
+    color: white;
+    min-height: 100%;
+}
+
+.FeedUserData {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Bookbtnfeed {
+    background-color: rgb(29, 74, 255);
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.FeedUserType {
+    background-color: rgb(153, 255, 0);
+    color: rgb(0, 0, 0);
+    padding: 2px 10px 2px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.NavbarBoxLeftlogo {
+    display: flex;
+    align-items: center;
+}
+
+.NavbarBoxLeftlogoText {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.NavbarBoxLeftlogoText span {
+    color: white;
+    font-weight: 300;
+    text-transform: lowercase;
+
+
+}
+
+.FeedNavbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: black;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+    z-index: 999;
+}
+
+.FeedNavbarBox {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.Navlogo {
+    width: 70px;
+}
+
+.MenuBox {
+    color: white;
+    display: flex;
+    align-items: center;
+
+}
+
+.MenuItem {
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 4px 15px 4px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}
+
+.MenuItem small {
+    color: blue;
+
+}
+
+@media only screen and (max-width: 900px) {
+    .FeedBox {
+        min-width: 100%;
+    }
+
+    .FeedUserBox {
+        margin-top: 0;
+    }
+
+    .FeedNavbarBox {
+        margin: auto;
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .Navlogo {
+        width: 70px;
+    }
+
+    .ReelsItem {
+        max-height: 10%;
+        overflow: hidden;
+
+    }
+
+
+
+
+
+}

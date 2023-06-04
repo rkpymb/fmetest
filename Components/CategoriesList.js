@@ -119,7 +119,7 @@ const CategoriesList = () => {
                         {Retdata.map((item) => {
                             return <Link href={`/Categories/${item.Catid}`} className={styles.CatGridItem} style={{ textDecoration: 'none' }}>
                                 <div className={styles.CatBoxItemCenter}>
-                                    <div>
+                                    <div className={styles.CatBoxItemCenterimg}>
                                         <Image
                                             src={`${BASE_URL}Storage/panel/Catimg/${item.img}`}
                                             alt="Picture of the author"
@@ -127,7 +127,7 @@ const CategoriesList = () => {
                                             height={50}
                                         />
                                     </div>
-                                    <div>
+                                    <div className={styles.CatBoxItemCenterTitle}>
                                         <span>{item.title}</span>
 
                                     </div>

@@ -7,12 +7,26 @@ import CheckloginContext from '../context/auth/CheckloginContext'
 import { BASE_URL, AppName } from '../Data/config'
 import { BiMobileVibration } from "react-icons/bi";
 import { HiOutlinePlay } from "react-icons/hi";
-import { CgFeed } from "react-icons/cg";
+import { CgFeed, CgPlayTrackNextR } from "react-icons/cg";
 import LocationBox from './LocationBox'
-import { MdAmpStories } from "react-icons/md";
-import { FaUserCircle } from "react-icons/fa";
+import { useRouter } from 'next/router'
+
 const Navbar = ({ BackDropOpen, BackDropClose }) => {
+    const router = useRouter()
+    const [MobileLocationBox, setMobileLocationBox] = useState(false);
     const Contextdata = useContext(CheckloginContext)
+
+    useEffect(() => {
+        // check login
+        try {
+            if (localStorage.getItem('Pincode')) {
+                setMobileLocationBox(true);
+            }
+        } catch (error) {
+            console.error(error)
+            // localStorage.clear()
+        }
+    }, [router.query]);
 
     return (
         <>
@@ -24,12 +38,25 @@ const Navbar = ({ BackDropOpen, BackDropClose }) => {
                                 <img src='/logo/fmelogo-dark.svg' alt='logo' className={styles.Navlogo} />
                             </Link>
                         </div>
-                        <div style={{ marginLeft: '10px', marginTop: '15px' }}>
+                        {/* <div style={{ marginLeft: '10px', marginTop: '15px' }}>
                             <LocationBox BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
-                        </div>
+                        </div> */}
                     </div>
                     <div className={styles.NavbarBoxRight}>
                         <div className={styles.NavbarBoxRightBTNBOX}>
+                            <div className={styles.NavbarBoxRightBTNBOX}>
+                                <Link href='/Feeds' style={{ textDecoration: 'none' }} >
+                                    <div className={styles.NavbarTopiconmenuItem} >
+                                        <div className={styles.NavbarTopiconmenuItemIcon}>
+                                            <span>
+                                                <CgPlayTrackNextR />
+                                            </span>
+                                        </div>
+                                        <div className={styles.NavbarTopiconmenuItemText}><span> Feeds</span></div>
+                                    </div>
+                                </Link>
+                             
+                            </div>
                             <div className={styles.NavbarBoxRightBTNBOX}>
                                 <Link href='/Categories' style={{ textDecoration: 'none' }} >
                                     <div className={styles.NavbarTopiconmenuItem} >
@@ -127,9 +154,19 @@ const Navbar = ({ BackDropOpen, BackDropClose }) => {
 
                     </div>
                 </div>
-                
+            
 
             </div>
+
+            <div className={styles.mobLocation}>
+                {MobileLocationBox &&
+                    <LocationBox BackDropOpen={BackDropOpen} BackDropClose={BackDropClose} />
+
+                }
+
+
+            </div>
+           
         </>
     )
 }
