@@ -21,6 +21,8 @@ const Navbar = ({ BackDropOpen, BackDropClose }) => {
         try {
             if (localStorage.getItem('Pincode')) {
                 setMobileLocationBox(true);
+            } else {
+                setMobileLocationBox(true);
             }
         } catch (error) {
             console.error(error)

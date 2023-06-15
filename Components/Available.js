@@ -7,8 +7,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import required modules
-import { Navigation, Autoplay } from "swiper";
+
+
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import React, { useRef, useState, useEffect } from "react";
@@ -16,8 +16,7 @@ import { useRouter } from 'next/router'
 import { BASE_URL } from '../Data/config'
 
 import Skeleton from '@mui/material/Skeleton';
-import { FiCoffee, FiAward, FiAlertCircle } from "react-icons/fi";
-import Button from '@mui/material/Button';
+
 import { SlLocationPin, SlInfo } from "react-icons/sl";
 
 export default function SliderTopHome() {
@@ -25,24 +24,21 @@ export default function SliderTopHome() {
     const [Retdata, setRetdata] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [ShowData, setShowData] = useState(false);
-    const [OpenSnakbar, setOpenSnakbar] = useState(true);
-    const [CurrentPincode, setCurrentPincode] = useState('');
+    
     const [CurrentCity, setCurrentCity] = useState('');
-    const [CurrentState, setCurrentState] = useState('');
+   
 
     useEffect(() => {
         setIsLoading(true)
         const SearchVendor = async () => {
             try {
-                if (localStorage.getItem('Pincode')) {
-                    const PincodeNow = localStorage.getItem('Pincode');
-                    const StateNow = localStorage.getItem('State');
+                if (localStorage.getItem('City')) {
+                    
                     const CityNow = localStorage.getItem('City');
-                    setCurrentPincode(PincodeNow)
-                    setCurrentState(StateNow)
+                
                     setCurrentCity(CityNow)
 
-                    const sendUM = { pincode: PincodeNow, city: CityNow }
+                    const sendUM = { city: CityNow }
                     const data = await fetch("/api/HomeFeed", {
                         method: "POST",
                         headers: {

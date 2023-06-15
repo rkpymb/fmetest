@@ -14,22 +14,19 @@ const Slug = ({ CatSlug, BackDropClose, BackDropOpen }) => {
     const router = useRouter()
     const [Retdata, setRetdata] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [ShowData, setShowData] = useState(true);
-    const [CurrentPincode, setCurrentPincode] = useState('');
+  
     const [CurrentCity, setCurrentCity] = useState('');
-    const [CurrentState, setCurrentState] = useState('');
+    
     useEffect(() => {
         setIsLoading(true)
         const SearchVendor = async () => {
             try {
-                if (localStorage.getItem('Pincode')) {
-                    const PincodeNow = localStorage.getItem('Pincode');
-                    const StateNow = localStorage.getItem('State');
+                if (localStorage.getItem('City')) {
+                  
                     const CityNow = localStorage.getItem('City');
-                    setCurrentPincode(PincodeNow)
-                    setCurrentState(StateNow)
+                   
                     setCurrentCity(CityNow)
-                    const sendUM = { pincode: PincodeNow, city: CityNow, CatSlug: CatSlug }
+                    const sendUM = { city: CityNow, CatSlug: CatSlug }
                     const data = await fetch("/api/ItemByCatSlug", {
                         method: "POST",
                         headers: {
@@ -114,7 +111,7 @@ const Slug = ({ CatSlug, BackDropClose, BackDropOpen }) => {
                 <div>
                     <div className={styles.TitleBTNHeader}>
                         <div className={styles.TitleBTNHeaderText}>
-                            <span style={{ fontWeight: 500, fontSize: '20px' }}>{Retdata.length} {CatSlug} available in {CurrentCity}, {CurrentState} , {CurrentPincode} </span>
+                            <span style={{ fontWeight: 500, fontSize: '20px' }}>{Retdata.length} {CatSlug} available in {CurrentCity}</span>
                         </div>
 
                     </div>
